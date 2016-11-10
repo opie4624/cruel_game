@@ -6,6 +6,7 @@ defmodule FrontDesk.Player do
     field :handle, :string
     field :phone, :string
     field :crypted_password, :string
+    field :password, :string, virtual: true
 
     timestamps()
   end
@@ -15,10 +16,12 @@ defmodule FrontDesk.Player do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:email, :handle, :phone, :crypted_password])
-    |> validate_required([:email, :handle, :phone, :crypted_password])
+    |> cast(params, [:email, :handle, :phone, :password])
+    |> validate_required([:email, :handle, :phone, :password])
     |> unique_constraint(:email)
     |> unique_constraint(:handle)
     |> unique_constraint(:phone)
+    |> validate_format(:email, ~r/@/)
+    |> validate_length(:password, min: 5)
   end
 end

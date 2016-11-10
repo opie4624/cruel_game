@@ -1,0 +1,2 @@
+defmodule Manager do
+end

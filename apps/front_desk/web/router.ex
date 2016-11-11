@@ -20,6 +20,7 @@ defmodule FrontDesk.Router do
 
     resources "/registrations", RegistrationController, only: [:new, :create]
     get    "/login",  SessionController, :new
+    post   "/login",  SessionController, :create
   end
 
   # Other scopes may use custom stacks.

@@ -13,6 +13,7 @@ defmodule FrontDesk.RegistrationController do
     case FrontDesk.Registration.create(changeset, FrontDesk.Repo) do
       {:ok, changeset} ->
         conn
+        |> put_session(:current_player, changeset.id)
         |> put_flash(:info, "Your account was created")
         |> redirect(to: "/")
       {:error, changeset} ->

@@ -18,4 +18,11 @@ defmodule FrontDesk.SessionController do
         |> render("new.html")
     end
   end
+
+  def delete(conn, _) do
+    conn
+    |> delete_session(:current_player)
+    |> put_flash(:info, "Logged out")
+    |> redirect(to: "/")
+  end
 end

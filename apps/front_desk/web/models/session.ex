@@ -9,6 +9,13 @@ defmodule FrontDesk.Session do
     end
   end
 
+  def current_player(conn) do
+    id = Plug.Conn.get_session(conn, :current_player)
+    if id, do: Blog.Repo.get(Player, id)
+  end
+
+  def logged_in?(conn), do: !!current_player(conn)
+
   defp authenticate(player, password) do
     case player do
       nil -> false

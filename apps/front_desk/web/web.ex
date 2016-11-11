@@ -52,6 +52,7 @@ defmodule FrontDesk.Web do
       import FrontDesk.Router.Helpers
       import FrontDesk.ErrorHelpers
       import FrontDesk.Gettext
+      import FrontDesk.Session, only: [current_player: 1, logged_in?: 1]
     end
   end
 

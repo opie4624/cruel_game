@@ -1,6 +1,10 @@
 <div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  <h2><%= gettext "Welcome to %{name}", name: "Cruel 2 B Kind" %></h2>
+  <p class="lead">A game of benevolent assassination.</p>
+</div>
+<div class="row">
+  <p>Cruel 2 B Kind in it's original form is Copyright &copy; 2006 Jane McGonigal & Ian Bogost.</p>
+  <p>This is an attempt to enable the game to manage itself and allow even the game runner to play. For more information about the original game, visit <a href="http://cruelgame.com/">www.cruelgame.com</a>.</p>
 </div>
 
 <div class="row marketing">

@@ -7,6 +7,7 @@ defmodule FrontDesk.Player do
     field :phone, :string
     field :crypted_password, :string
     field :password, :string, virtual: true
+    has_many :games, Game
 
     timestamps()
   end

@@ -3,7 +3,7 @@ defmodule FrontDesk.PlayerTest do
 
   alias FrontDesk.Player
 
-  @valid_attrs %{crypted_password: "some content", email: "some content", handle: "some content", phone: "some content"}
+  @valid_attrs %{password: "password", email: "user@example.com", handle: "handle", phone: "12345678910"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

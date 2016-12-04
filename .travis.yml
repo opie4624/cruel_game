@@ -3,3 +3,5 @@ elixir:
   - 1.3.4
 services:
   - postgresql
+before_script:
+  - mix do ecto.create, ecto.migrate
